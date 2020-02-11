@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>../resources/fonts/RobotoCondensed-Bold.ttf</file>
+        <file>../resources/fonts/RobotoCondensed-Light.ttf</file>
+        <file>../resources/fonts/RobotoCondensed-Regular.ttf</file>
+        <file>../resources/icons/outline-keyboard_arrow_down-24px.svg</file>
+        <file>../resources/icons/outline-menu-24px.svg</file>
+        <file>../resources/icons/outline-keyboard_arrow_up-24px.svg</file>
+        <file>../resources/icons/outline-pets-24px.svg</file>
+        <file>../resources/icons/outline-clear-24px.svg</file>
+        <file>../resources/icons/baseline-keyboard_arrow_left-24px.svg</file>
+        <file>../resources/icons/baseline-keyboard_arrow_right-24px.svg</file>
+        <file>Style.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>qmldir</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>../resources/icons/outline-menu-24px.svg</file>
+        <file>../QML/ControlsSet/ComboBoxPanel.qml</file>
+        <file>../QML/ControlsSet/IntegerSliderPanel.qml</file>
+        <file>../QML/ControlsSet/RealSwitchPanel.qml</file>
+        <file>../QML/ControlsSet/SubsystemPropertyLabelDelegate.qml</file>
+        <file>../QML/ControlsSet/SubsystemPropertyValueDelegate.qml</file>
+        <file>../QML/ControlsSet/TextPanel.qml</file>
+        <file>../QML/CustomControls/CustomComboBox.qml</file>
+        <file>../QML/CustomControls/CustomLabel.qml</file>
+        <file>../QML/CustomControls/CustomRealSwitch.qml</file>
+        <file>../QML/CustomControls/CustomSlider.qml</file>
+        <file>../QML/CustomControls/CustomTextField.qml</file>
+        <file>../QML/CustomControls/Separator.qml</file>
+        <file>../QML/CustomControls/SwitchTreeItem.qml</file>
+        <file>../QML/CustomControls/SwitchTwoItem.qml</file>
+        <file>../QML/TM2221_5/EM5215.qml</file>
+        <file>../QML/TM2221_5/KuMode.qml</file>
+        <file>../QML/TM2221_5/MainTM2221.qml</file>
+        <file>../QML/TM2221_5/Resolution.qml</file>
+        <file>../QML/TM2221_5/VideoServer.qml</file>
+        <file>../QML/Style/Style.qml</file>
+        <file>../resources/fonts/RobotoCondensed-Regular.ttf</file>
+        <file>qmldir</file>
+        <file>qtquickcontrols2.conf</file>
+    </qresource>
+    <qresource prefix="/CustomControls"/>
+    <qresource prefix="/ControlsSet"/>
+    <qresource prefix="/TM2221"/>
+</RCC>
