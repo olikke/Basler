@@ -54,18 +54,22 @@ void EM5215parser::answer10(QByteArray &ba, QString &commandName)
         return;
     }
     quint8 crc=calcCRC8(reinterpret_cast<quint8*>(ba.data()),ba.size()-1);
+
     if (quint8(ba[9])!=crc)
     {
         errorCheckSumm(ba,commandName);
         return;
     }
+//    emit Message(LoggerMsg::Info,QString(ba.toHex()));
     lastDataPacket=ba;
     // parse
     (static_cast<quint8>(ba[2])>=0x80) ? em5215Struct.Mode=EM5215Mode::Manual : em5215Struct.Mode = EM5215Mode::Auto;
     em5215Struct.TemperatureKu=ba[1];
     em5215Struct.Humidity=ba[2] & 0x7F;
-    em5215Struct.TemperatureBody=ba[3];
-    em5215Struct.TemperatureRadiator=ba[4];
+    if (static_cast<quint8>(ba[3])<0x80) em5215Struct.TemperatureBody=ba[3];
+    else em5215Struct.TemperatureBody=-(static_cast<quint8>(ba[3]) & 0x7F);
+    if (static_cast<quint8>(ba[4])<0x80) em5215Struct.TemperatureRadiator=ba[4];
+    else em5215Struct.TemperatureRadiator=-(static_cast<quint8>(ba[4]) & 0x7F);
     em5215Struct.FanSpeed=ba[5];
     em5215Struct.CurrentP1=ba[6]&0x0F;
     em5215Struct.CurrentP2=(ba[6]&0xF0)>>4;

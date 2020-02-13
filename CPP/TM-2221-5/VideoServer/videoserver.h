@@ -52,7 +52,7 @@ public:
     double getHalfMBPerSec() {return vsStruct->HalfMBPerSec;}
 
     //чтобы запустить парс данных для вывода на форму
-    inline void setParse(bool _parse) {parse=_parse;}
+    Q_INVOKABLE void startParse(const bool p) {parse=p;}
 
     Q_INVOKABLE int getTemperatureColor();
 

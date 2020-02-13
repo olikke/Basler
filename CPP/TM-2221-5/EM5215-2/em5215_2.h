@@ -78,14 +78,14 @@ public:
     Q_INVOKABLE void switchP1(const int peltier, const int current);
     Q_INVOKABLE void switchP2(const int peltier, const int current);
 
-    void setParse(bool _parse) {parse=_parse;}
+    Q_INVOKABLE void startParse(const bool p) {parse=p;}
 
     //for calculate value in qml
     Q_INVOKABLE QList<int> getFanLimit();
     Q_INVOKABLE QList<int> getCurrentLimit();
     Q_INVOKABLE double getFanLoValue() {return FAN_VALUE_LO_LIMIT;}
     Q_INVOKABLE double getFanConst() {return (FAN_VALUE_HI_LIMIT-FAN_VALUE_LO_LIMIT)/(FAN_HI_LIMIT-FAN_LO_LIMIT);}
-    Q_INVOKABLE double getCurrentLoValue() {return CURRENT_LO_LIMIT;}
+    Q_INVOKABLE double getCurrentLoValue() {return CURRENT_VALUE_LO_LIMIT;}
     Q_INVOKABLE double getCurrentConst() {return (CURRENT_VALUE_HI_LIMIT-CURRENT_VALUE_LO_LIMIT)/(CURRENT_HI_LIMIT-CURRENT_LO_LIMIT);}
 
     Q_INVOKABLE DeviceState getHumidityColor();

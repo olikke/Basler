@@ -32,8 +32,6 @@ public:
     Q_PROPERTY(DeviceState state READ getState NOTIFY stateChanged)
     DeviceState getState() {return _state;}
 
-    Q_INVOKABLE void startParse(const bool p);
-
     Q_INVOKABLE QObject* getEM5215() {return static_cast<QObject*> (em5215);}
 
     Q_INVOKABLE QObject* getVideoServer() {return static_cast<QObject*> (videoServer);}

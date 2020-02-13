@@ -30,11 +30,6 @@ Tm2221_5::Tm2221_5(Log *log, PylonCamera* pylonCamera, Settings* set, QString na
     connect(em5215,&EM5215::dataExhChanged,this,&Tm2221_5::dataExhChanged);
 }
 
-void Tm2221_5::startParse(const bool p)
-{
-    em5215->setParse(p);
-}
-
 QObject* Tm2221_5::getEM5215()
 {
     return static_cast<QObject*> (em5215);

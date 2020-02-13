@@ -8,6 +8,11 @@ import "qrc:/../QML/Style/"
 
 Item {
 
+    Component.onDestruction: {
+        em5215.startParse(false)
+    }
+
+
     property var em5215 : null
 
     property int oneElementHeight: 20
@@ -28,6 +33,7 @@ Item {
 
     function initialize()
     {
+        em5215.startParse(true)
         var IntArray=em5215.getFanLimit()
         fanU.minValue=IntArray[0]
         fanU.maxValue=IntArray[1]
@@ -56,7 +62,8 @@ Item {
 
     function fanUcalc()
     {
-        return (fanLoValue+fanU.curValue*fanConst).toFixed(2)
+        if (fan.isChecked) return (fanLoValue+fanU.curValue*fanConst).toFixed(2)
+        return 0
     }
 
     function switchR1(value)
@@ -84,8 +91,15 @@ Item {
         em5215.switchP2(p2.curValue,currentP2.curValue)
     }
 
-    function currentPCalc(value)
+    function currentP1Calc(value)
     {
+        if (p1.curValue===0) return 0
+        return (currentLoValue+value*currentConst).toFixed(2)
+    }
+
+    function currentP2Calc(value)
+    {
+        if (p2.curValue===0) return 0
         return (currentLoValue+value*currentConst).toFixed(2)
     }
 
@@ -167,7 +181,7 @@ Item {
                 height: oneElementHeight
                 curValue: temp
                 updateValueFunction: changeFanU
-                enabled: !em5215AutoMode
+                enabled: !em5215AutoMode && fan.isChecked
                 panelEnabled: em5215DE
                 calcValue: fanUcalc
             }
@@ -243,7 +257,7 @@ Item {
                 curValue: temp
                 updateValueFunction: switchP1
                 enabled: !em5215AutoMode
-                calcValue: currentPCalc
+                calcValue: currentP1Calc
             }
 
             ComboBoxPanel {
@@ -270,7 +284,7 @@ Item {
                 height: oneElementHeight
                 curValue: temp
                 updateValueFunction: switchP2
-                calcValue: currentPCalc
+                calcValue: currentP2Calc
                 enabled: !em5215AutoMode
             }
 

@@ -6,6 +6,8 @@ import "qrc:/../QML/ControlsSet/"
 import "qrc:/../QML/CustomControls/"
 
 Item {
+
+
     id: root
     clip: true
     height: column.implicitHeight+column.anchors.margins
@@ -15,6 +17,14 @@ Item {
     property int oneElementHeight: 20
 
     property bool de: videoServer.dataExh
+
+    Component.onCompleted: {
+        videoServer.startParse(true)
+    }
+    Component.onDestruction: {
+        videoServer.startParse(false)
+    }
+
 
     Column {
         id: column

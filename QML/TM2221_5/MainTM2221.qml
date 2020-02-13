@@ -6,12 +6,12 @@ import "qrc:/../QML/CustomControls/"
 
 Item {
 
-    Component.onCompleted: {
-        tm2221.startParse(true)
-    }
-    Component.onDestruction: {
-        tm2221.startParse(false)
-    }
+//    Component.onCompleted: {
+//        tm2221.startParse(true)
+//    }
+//    Component.onDestruction: {
+//        tm2221.startParse(false)
+//    }
 
     CustomLabel {
         text: "Нет обмена данными"

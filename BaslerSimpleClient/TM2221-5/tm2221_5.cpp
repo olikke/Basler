@@ -13,12 +13,6 @@ Tm2221_5::Tm2221_5(cameraControl &_control, QObject *parent):
     waitingTime=1000;
 }
 
-void Tm2221_5::startParse(const bool p)
-{
-    em5215->setParse(p);
-    videoServer->setParse(p);
-}
-
 void Tm2221_5::changeKuMode(char mode)
 {
     QByteArray ba;

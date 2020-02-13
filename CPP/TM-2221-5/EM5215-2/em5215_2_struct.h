@@ -7,12 +7,12 @@ const quint32 UNDEFINED_NUMBER = 0xFFFFFFFF;
 
 const int FAN_HI_LIMIT = 0xFF;
 const int FAN_LO_LIMIT = 0x00;
-const double FAN_VALUE_HI_LIMIT = 12.5;
-const double FAN_VALUE_LO_LIMIT = 7.;
+const double FAN_VALUE_HI_LIMIT = 12.36;
+const double FAN_VALUE_LO_LIMIT = 7.5;
 
 
-const double CURRENT_VALUE_HI_LIMIT = 1.;
-const double CURRENT_VALUE_LO_LIMIT = 0.2;
+const double CURRENT_VALUE_HI_LIMIT = 0.9;
+const double CURRENT_VALUE_LO_LIMIT = 0.25;
 const int CURRENT_HI_LIMIT = 0x0F;
 const int CURRENT_LO_LIMIT = 0x00;
 

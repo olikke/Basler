@@ -18,7 +18,6 @@ class Tm2221_5 : public UnitsParent
 public:
     //в Главном операторе прописать схемное обозначение чтобы отличать в логе записи от разных устройств
     Tm2221_5(Log* log, PylonCamera* pylonCamera, Settings* set, QString name=" ",QObject *parent = nullptr);
-    Q_INVOKABLE void startParse(const bool p);
 signals:
     void Message(LoggerMsg lm,  QString message);
     void sendDataTo(QByteArray &ba);
